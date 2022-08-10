@@ -1,15 +1,18 @@
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeFilter } from '../../redux/contactsSlice';
 
-const Filter = ({ value, onChahgeFilter }) => {
+const Filter = () => { 
+  const value = useSelector(state => state.contacts.filter);
+  const dispatch = useDispatch();
+  const onChahgeFilter = (e) => {
+    dispatch(changeFilter(e.target.value)); 
+  }
   return (
     <label>
-      Find contacts by name
+      onChahgeFilter Find contacts by name
       <input type="text" value={value} onChange={onChahgeFilter} />
     </label>
   );
 };
-Filter.propTypes = {
-  value: PropTypes.string,
-  onChahgeFilter: PropTypes.func,
-};
+
 export default Filter;
