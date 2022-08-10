@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFilter } from '../../redux/contactsSlice';
+import { changeFilter,getFilterValue } from '../../redux/contactsSlice';
 
 const Filter = () => { 
-  const value = useSelector(state => state.contacts.filter);
+  const value = useSelector(getFilterValue);
   const dispatch = useDispatch();
   const onChahgeFilter = (e) => {
     dispatch(changeFilter(e.target.value)); 
