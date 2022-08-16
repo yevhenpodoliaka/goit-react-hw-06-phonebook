@@ -9,7 +9,7 @@ const Filter = () => {
   }
   return (
     <label>
-      onChahgeFilter Find contacts by name
+      Find contacts by name
       <input type="text" value={value} onChange={onChahgeFilter} />
     </label>
   );
